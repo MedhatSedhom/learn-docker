@@ -8,3 +8,6 @@ RUN pip3 install numpy
 RUN pip3 install pandas nltk gensim pyLdavis
 RUN pip3 install pyLDAvis==2.1.2
 RUN pip3 install tqdm
+RUN pip3 install notebook
+
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=9999", "--allow-root"]

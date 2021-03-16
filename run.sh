@@ -1,4 +1,4 @@
 #!/bin/bash
 
 docker build -t image1 .
-docker run -it  image1
+docker run -it -p 9999:9999 image1
