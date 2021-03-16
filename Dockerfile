@@ -16,7 +16,6 @@ RUN apt-get install -y tzdata
 RUN apt install unzip -y
 RUN apt install openjdk-8-jdk -y
 
-ADD src /src/
-WORKDIR /src/
+WORKDIR /src
 
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=9999", "--allow-root"]
