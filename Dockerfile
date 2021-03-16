@@ -10,4 +10,13 @@ RUN pip3 install pyLDAvis==2.1.2
 RUN pip3 install tqdm
 RUN pip3 install notebook
 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN export TZ="Europe/Berlin"
+RUN apt-get install -y tzdata
+RUN apt install unzip -y
+RUN apt install openjdk-8-jdk -y
+
+ADD src /src/
+WORKDIR /src/
+
 CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--port=9999", "--allow-root"]
